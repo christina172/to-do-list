@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+</head>
+
+<body>
+    <h1>This is My To-do List</h1>
+    <div class="main">
+        <div class="categories">
+            <h2 class="categories-header">Categories</h2>
+            <div class="categories-container"></div>
+            <button type="button" class="add-category">+ Add a category</button>
+            <div class="form-popup-category">
+                <form>
+                    <h3>Add a category</h3>
+                    <div class="form-item">
+                        <label for="category-name">Category name:</label>
+                        <input type="text" id="category-name" name="category-name">
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" class="submit-category">Add</button>
+                        <button type="button" class="cancel-category">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="tasks">
+            <div class="tasks-header-container">
+                <h2 class="tasks-header">Tasks</h2>
+                <button type="button" class="add-task">+ Add a task</button>
+                <div class="form-popup-task">
+                    <form>
+                        <h3>Add a task</h3>
+                        <div class="form-item">
+                            <label for="task-title">Task title:</label>
+                            <input type="text" id="task-title" name="task-title">
+                        </div>
+                        <div class="form-item">
+                            <label for="task-description">Task description:</label>
+                            <input type="text" id="task-description" name="task-description">
+                        </div>
+                        <div class="form-item">
+                            <label for="task-date">Due date:</label>
+                            <input type="date" id="task-date" name="task-date">
+                        </div>
+                        <div class="form-item">
+                            <label for="task-priority">Task priority:</label>
+                            <input type="text" id="task-priority" name="task-priority">
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="submit-task">Add</button>
+                            <button type="button" class="cancel-task">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-popup-edit-task">
+                    <form>
+                        <h3>Edit task</h3>
+                        <div class="form-item">
+                            <label for="new-task-title">Task title:</label>
+                            <input type="text" id="new-task-title" name="new-task-title">
+                        </div>
+                        <div class="form-item">
+                            <label for="new-task-description">Task description:</label>
+                            <input type="text" id="new-task-description" name="new-task-description">
+                        </div>
+                        <div class="form-item">
+                            <label for="new-task-date">Due date:</label>
+                            <input type="date" id="new-task-date" name="new-task-date">
+                        </div>
+                        <div class="form-item">
+                            <label for="new-task-priority">Task priority:</label>
+                            <input type="text" id="new-task-priority" name="new-task-priority">
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="edit-task">Edit</button>
+                            <button type="button" class="cancel-edit-task">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tasks-container"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

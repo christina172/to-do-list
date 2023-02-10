@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.tasks-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-popup-category,
+.form-popup-task,
+.form-popup-edit-task {
+    display: none;
+    border: black solid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.add-task {
+    display: none;
+}
+
+.task-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-top div {
+    display: flex;
+}
+
+.edit {
+    height: 2rem;
+    width: auto;
+}
