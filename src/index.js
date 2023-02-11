@@ -10,7 +10,7 @@ console.log(categories);
 
 categories[0].addTask("Buy soap", "Buy 6 bars of scented soap", "2023-02-14", "low", "yes");
 console.log(categories);
-categories[0].addTask("Sort the library", "Sort books in 3 bookcases in the living room and in master bedroom", "2023-02-25", "low", "no");
+categories[0].addTask("Sort the library", "Sort the books in 3 bookcases in the living room and in the bedroom", "2023-02-25", "low", "no");
 categories[0].addTask("Wash the windows", "Wash the windows in the kitchen, the living room and in the bedrooms", "2023-03-01", "high", "no");
 
 

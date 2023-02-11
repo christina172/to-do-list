@@ -16,8 +16,24 @@ function showAddTaskButton() {
 function showCategoryHeading() {
     const addTaskButton = document.querySelector(".add-task");
     const tasksHeader = document.querySelector(".tasks-header");
+    const tasksHeaderContainer = document.querySelector(".tasks-header-container");
     tasksHeader.dataset.indexCategoryHeading = addTaskButton.dataset.indexAdd;
     tasksHeader.textContent = categories[tasksHeader.dataset.indexCategoryHeading].name;
+
+    const categoryName = document.querySelector(`[data-index-category="${tasksHeader.dataset.indexCategoryHeading}"]`);
+    const category = document.querySelector(`[data-index-category-div="${tasksHeader.dataset.indexCategoryHeading}"]`);
+
+    if (categoryName.textContent === tasksHeader.textContent) {
+        category.classList.remove("not-chosen");
+        tasksHeaderContainer.classList.add("category-chosen");
+        category.classList.add("category-chosen");
+        let not = document.querySelectorAll(".not-chosen");
+        not.forEach((n) => {
+            n.classList.remove("category-chosen");
+        });
+    }
+
+    category.classList.add("not-chosen");
 };
 
 function completeChecked(i, j) {
@@ -145,9 +161,10 @@ function displayTasks() {
         taskCompleteBox.dataset.indexCompleteBox = j;
         if (categories[tasksContainer.dataset.indexTasksContainer].tasks[j].complete === "yes") {
             taskCompleteBox.setAttribute("checked", "true");
+            task.classList.add("complete");
         }
         taskCompleteBox.addEventListener("change", () => {
-            completeChecked(tasksContainer.dataset.indexTasksContainer, j)
+            completeChecked(tasksContainer.dataset.indexTasksContainer, j);
         });
 
         const edit = document.createElement("img");
@@ -192,6 +209,9 @@ function deleteCategory(i) {
         delete tasksHeader.dataset.indexCategoryHeading;
         document.querySelector(".add-task").style.display = "none";
 
+        const tasksHeaderContainer = document.querySelector(".tasks-header-container");
+        tasksHeaderContainer.classList.remove("category-chosen");
+
         const tasksContainer = document.querySelector(".tasks-container");
         delete tasksContainer.dataset.indexTasksContainer;
         tasksContainer.innerHTML = "";
@@ -208,10 +228,18 @@ function displayCategories() {
     for (let i = 0; i < categories.length; i++) {
 
         const category = document.createElement("div");
+        category.dataset.indexCategoryDiv = i;
+        category.classList.add("not-chosen");
 
         const categoryName = document.createElement("div");
         categoryName.textContent = categories[i].name;
+        categoryName.classList.add("category-name-pointer");
         categoryName.setAttribute("data-index-category", i);
+
+        const tasksHeader = document.querySelector(".tasks-header");
+        if (categoryName.textContent === tasksHeader.textContent) {
+            category.classList.add("category-chosen");
+        }
 
         const addTaskButton = document.querySelector(".add-task");
         categoryName.addEventListener("click", () => {

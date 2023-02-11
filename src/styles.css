@@ -3,41 +3,200 @@
     padding: 0;
 }
 
+body {
+    min-height: 100vh;
+    background-color: rgb(255, 214, 237);
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    padding: 15px;
+    border: 3px solid black;
+    text-align: center;
+    background-color: cornsilk;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
 .main {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    border-bottom: 3px solid black;
+    flex: 1;
+}
+
+.categories {
+    border-left: 3px solid black;
+}
+
+.categories-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid black;
+}
+
+.categories-header,
+.categories-container>div,
+.categories-button {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.categories-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.categories-container>div {
+    font-size: 1.75rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
+}
+
+.remove-category-button,
+.add-category,
+.add-task,
+.task button,
+.buttons button {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.remove-category-button,
+.task-top>div:last-child>button:last-child {
+    font-weight: bold;
+}
+
+.tasks {
+    border-left: 3px solid black;
+    border-right: 3px solid black;
 }
 
 .tasks-header-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 3px solid black;
 }
 
-.form-popup-category,
-.form-popup-task,
-.form-popup-edit-task {
-    display: none;
-    border: black solid;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.task {
+    padding: 10px 15px;
+    border-bottom: 3px solid black;
+}
+
+.task-top {
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .add-task {
     display: none;
 }
 
-.task-top {
-    display: flex;
-    justify-content: space-between;
-}
-
 .task-top div {
     display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .edit {
-    height: 2rem;
+    height: 1.5rem;
+    width: auto;
+}
+
+.bottom {
+    font-size: 1rem;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+
+.form-popup-category,
+.form-popup-task,
+.form-popup-edit-task {
+    padding: 15px;
+    display: none;
+    border: 3px black solid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: cornsilk;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+input {
+    font-size: 1rem;
+    padding: 2px 4px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 1.25rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.category-chosen {
+    background-color: rgb(255, 150, 210);
+}
+
+.complete {
+    background-color: rgb(196, 223, 255);
+}
+
+button,
+.edit,
+.category-name-pointer {
+    cursor: grab;
+}
+
+button:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+.edit:hover {
+    height: 1.75rem;
     width: auto;
 }
