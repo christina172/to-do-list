@@ -1,4 +1,5 @@
 import { categories, Category, Task, removeCategory, addCategory } from "./logic";
+import { store } from "./storage";
 
 const categoriesContainer = document.querySelector(".categories-container");
 const tasksContainer = document.querySelector(".tasks-container");
@@ -47,6 +48,8 @@ function completeChecked(i, j) {
             taskComplete.textContent = "Task complete: yes";
         }
         task.classList.add("complete");
+        //
+        store();
     } else {
         categories[i].tasks[j].complete = "no";
         taskCompleteBox.checked = false;
@@ -54,6 +57,8 @@ function completeChecked(i, j) {
             taskComplete.textContent = "Task complete: no";
         }
         task.classList.remove("complete");
+        //
+        store();
     }
 };
 
@@ -62,6 +67,8 @@ function deleteTask(i, j) {
     console.log(categories);
     tasksContainer.innerHTML = "";
     displayTasks();
+    //
+    store();
 }
 
 function showDetails(i, j) {
@@ -131,6 +138,8 @@ function editTask(e) {
     closeTaskEditForm();
     displayTasks();
     document.querySelector(".form-popup-edit-task form").reset();
+    //
+    store();
 
     console.log(categories);
 }
@@ -277,6 +286,8 @@ function submitTask(e) {
     document.querySelector(".form-popup-task form").reset();
     closeTaskForm();
     displayTasks();
+    //
+    store();
 
     console.log(categories);
 };

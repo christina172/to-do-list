@@ -1,3 +1,5 @@
+import { store } from "./storage";
+
 let categories = [];
 
 class Category {
@@ -35,11 +37,35 @@ class Task {
 
 function removeCategory(index) {
     categories.splice(index, 1);
+
+    store();
+    // localStorage.setItem("categories", JSON.stringify(categories));
+    // let jsonCategories = JSON.parse(localStorage.getItem("categories"));
 }
+
+
 
 function addCategory(name) {
     let category = new Category(name);
     categories.push(category);
+
+
+    store();
+    // localStorage.setItem("categories", JSON.stringify(categories));
+    // let jsonCategories = JSON.parse(localStorage.getItem("categories"));
+
+    // // let jsonCategories = JSON.parse(localStorage.getItem("categories"));
+    // //jsonCategories.push(category);
+
+    // localStorage.setItem("categories", JSON.stringify(jsonCategories));
+
+    // for (let i = 0; i < jsonCategories.length; i++) {
+    //     console.log(jsonCategories[i]);
+    //     // for (let j = 0; j < jsonCategories[i].tasks.length; j++) {
+    //     //     console.log(jsonCategories[i].tasks[j]);
+    //     // }
+    // }
+
 }
 
 export { categories, Category, Task, removeCategory, addCategory };
