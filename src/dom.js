@@ -48,7 +48,7 @@ function completeChecked(i, j) {
             taskComplete.textContent = "Task complete: yes";
         }
         task.classList.add("complete");
-        //
+
         store();
     } else {
         categories[i].tasks[j].complete = "no";
@@ -57,7 +57,7 @@ function completeChecked(i, j) {
             taskComplete.textContent = "Task complete: no";
         }
         task.classList.remove("complete");
-        //
+
         store();
     }
 };
@@ -67,7 +67,7 @@ function deleteTask(i, j) {
     console.log(categories);
     tasksContainer.innerHTML = "";
     displayTasks();
-    //
+
     store();
 }
 
@@ -138,7 +138,7 @@ function editTask(e) {
     closeTaskEditForm();
     displayTasks();
     document.querySelector(".form-popup-edit-task form").reset();
-    //
+
     store();
 
     console.log(categories);
@@ -286,7 +286,7 @@ function submitTask(e) {
     document.querySelector(".form-popup-task form").reset();
     closeTaskForm();
     displayTasks();
-    //
+
     store();
 
     console.log(categories);
